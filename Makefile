@@ -29,7 +29,6 @@ DISTRIBUTION_PLIST=Source/carthage/Distribution.plist
 RM=rm -f
 RMD=rm -rf
 MKDIR=mkdir -p
-SUDO=sudo
 MV=mv -f
 CP=cp
 RSYNC=rsync -a --delete
@@ -53,7 +52,7 @@ clean:
 	xcodebuild $(XCODEFLAGS) clean
 
 install: package
-	$(SUDO) installer -pkg $(OUTPUT_PACKAGE) -target /
+	installer -pkg $(OUTPUT_PACKAGE) -target /
 
 uninstall:
 	$(RM_SAFELY) "$(FRAMEWORKS_FOLDER)/$(OUTPUT_FRAMEWORK)"
